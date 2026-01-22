@@ -5,7 +5,7 @@ The idea of a ZKVM is to recompile the "engine" of the Ethereal Virtual Machine 
 
 ### The Problem
 
-- Traditional ZK-EVM had to manually build math circuits for every single Ethereal OPCODE.
+- Traditional ZK-EVM had to manually build math circuits for every single Ethereum OPCODE.
 - So for every operations (like adding), engineers had to manually design a mathematical circuit (constraint). Every time when I want to solve a new type of math problem, I need to write another circuit. In other words it's hard to update.
 
 ### Solution
@@ -128,6 +128,11 @@ Overall RISC-V-based ZKVMs allows for fast proof development and the reuse of ex
 - Security
 
 Miscompilation bugs and the complexity of achieving reproducible builds continue to pose significant issues.
+
+In other words the Drawbacks and Challenges:
+- Performance Bottlenecks ->Certain instructions present performance bottlenecks, devs optimize their code and use specialized hardware or accelerators to mitigate that. (Glue and Coprocessor solves that)
+- Compiler bugs -> RISC-V assembly code does not accurately reflect the original high-level cod, because of miss-optimization bugs.
+- Benchmarking Challenges -> ZKVMs that use different ISA’s, are hard to be compared to RISC-V architectures for performance
 
 ---
 
